@@ -17,12 +17,14 @@ package com.google.firebase.codelab.friendlychat;
 
 import android.util.Log;
 
+import com.google.firebase.iid.FirebaseInstanceIdService;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-public class MyFirebaseMessagingService {
+public class MyFirebaseMessagingService extends FirebaseInstanceIdService {
 
     private static final String TAG = "MyFMService";
+    private static final String FRIENDLY_ENGAGE_TOPIC = "friendly_engage";
 
     public void onMessageReceived(RemoteMessage remoteMessage) {
         // Handle data payload of FCM messages.
